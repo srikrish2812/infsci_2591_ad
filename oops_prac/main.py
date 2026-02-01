@@ -18,27 +18,56 @@ class CloudStorage:
     def add_file(self, file_id, size):
         if file_id in self.files:
             return "false"
-        self.files[file_id] = {"id": file_id, "size": size}
+        self.files[file_id] = {"id": file_id, "size": size, "active": True}
         return "true"
 
     def get_file_size(self, file_id):
         if file_id in self.files:
-            return str(self.files[file_id]["size"])
+            if self.files[file_id]["active"]:
+                return str(self.files[file_id]["size"])
+            else:
+                return ""
         else:
             return ""
 
     def copy_file(self, source_id, dest_id):
-        cond = (source_id not in self.files) or (dest_id in self.files)
+        cond = (
+            (source_id not in self.files)
+            or (dest_id in self.files)
+            or (not self.files[source_id]["active"])
+        )
         if cond:
             return "false"
         else:
-            self.files[dest_id] = {"id": dest_id, "size": self.files[source_id]["size"]}
+            self.files[dest_id] = {
+                "id": dest_id,
+                "size": self.files[source_id]["size"],
+                "active": True,
+            }
             return "true"
 
     def find_large_files(self, min_size):
         required_files = []
         for value in self.files.values():
-            if value["size"] >= min_size:
+            if value["size"] >= min_size and value["active"]:
                 required_files.append(str(value["id"]))
         required_files = sorted(required_files)
         return ", ".join(required_files)
+
+    def delete_file(self, file_id):
+        if file_id not in self.files:
+            return "false"
+        if not self.files[file_id]["active"]:
+            return "false"
+        else:
+            self.files[file_id]["active"] = False
+            return "true"
+
+    def restore_file(self, file_id):
+        if file_id not in self.files:
+            return "false"
+        if self.files[file_id]["active"]:
+            return "false"
+        else:
+            self.files[file_id]["active"] = True
+            return "true"
