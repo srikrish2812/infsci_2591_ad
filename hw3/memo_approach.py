@@ -13,7 +13,8 @@ def howSum_memo(targetSum, numbers, memo=None):
     if memo is None:
         memo = {}
 
-    if targetSum in memo:  # checking if it is already there in memo
+    # checking if it is already there in memo
+    if targetSum in memo:
         return memo[targetSum]
 
     # checking for base cases
