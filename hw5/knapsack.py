@@ -39,7 +39,7 @@ def knapsack_01(values, weights, capacity):
     for i in range(n, 0, -1):
         # If value changed, item i was taken
         if dp[i][remaining_capacity] != dp[i - 1][remaining_capacity]:
-            selected_items.append(i - 1)  # 0-based index
+            selected_items.append(i - 1)
             remaining_capacity -= weights[i - 1]
 
     # Reverse to get items in original order
