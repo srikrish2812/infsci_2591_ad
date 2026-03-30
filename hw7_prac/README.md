@@ -1,11 +1,11 @@
-Topic 1: Bit Manipulation Basics
+1. Topic 1: Bit Manipulation Basics
+
+2. Topic 2: Essential Bit Tricks
          ↓
-Topic 2: Essential Bit Tricks
+3. Topic 3: Bitmask as State Representation
          ↓
-Topic 3: Bitmask as State Representation
+4. Topic 4: Backtracking Fundamentals
          ↓
-Topic 4: Backtracking Fundamentals
+5. Topic 5: Bitmask + Backtracking
          ↓
-Topic 5: Bitmask + Backtracking
-         ↓
-Topic 6: n-Queens with Bitmasks
+6. Topic 6: n-Queens with Bitmasks
