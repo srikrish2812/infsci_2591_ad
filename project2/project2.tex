@@ -16,7 +16,7 @@
 \hypersetup{
     colorlinks=true,
     linkcolor=blue,
-    filecolor=magenta,      
+    filecolor=magenta,
     urlcolor=cyan,
     citecolor=blue,
 }
@@ -84,7 +84,7 @@
 \end{table}
 
 
-\subsection{Floyd Algorithm using Linked List}  
+\subsection{Floyd Algorithm using Linked List}
 
 \begin{table}[h!] % [H] forces the table to stay exactly HERE
 \centering
@@ -103,14 +103,14 @@
 
 \section{Time Performance Plots}
 \subsection{Dijkstra's Algorithm}
-\begin{figure}[H] 
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.7\textwidth]{Plot_Dijkstra_Time_Performance.png}
     \caption{Time Taken by Dijkstra's Algorithm for 2D Array and Linked List Implementations}
     \label{fig:dij_2d_time_performance}
 \end{figure}
 \subsection{Floyd's Algorithm}
-\begin{figure}[H] 
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.7\textwidth]{Plot_Floyd_Time_Performance.png}
     \caption{Time Taken by Floyd's Algorithm for 2D Array and Linked List Implementations}
@@ -119,7 +119,7 @@
 
 \section{Time and Memory Usage}
 
-Memory usage was computed based on the data structures used in each algorithm assuming 
+Memory usage was computed based on the data structures used in each algorithm assuming
 64-bit architecture. The tables below show the time taken and memory used by each algorithm
 under both implementations.
 \begin{table}[h!]
@@ -191,11 +191,11 @@ The memory usage is calculated in the following way:
   \item \textbf{Memory usage in Floyd's algorithm with 2D array:} \\
   Usage: 3x Matrices - Base, Dist, Next Node \\
   Formula: $3 \times (N^2 \times 8) + 3 \times (N \times 8)$ bytes \\
-    
+
   \item \textbf{Memory usage in Floyd's algorithm with linked list:} \\
   Usage: Linked List size + 2x Matrices Dist, Next Node\\
   Formula: $(N \times 8) + (E \times 24) + 2 \times (N^2 \times 8) + 2 \times (N \times 8)$ bytes \\
-    
+
 \end{itemize}
 where $N = nodes $ and $E = edges $. Total memory usage in each case:
 \begin{itemize}

@@ -25,3 +25,12 @@ project2/project2.fdb_latexmk
 project2/project2.synctex.gz
 
 hw7/infsci2591_hw7_abhay.zip
+
+project3/_minted/
+project3/project3.aux
+project3/project3.log
+project3/project3.out
+project3/project3.fls
+project3/project3.fdb_latexmk
+project3/project3.synctex.gz
+*.zip
